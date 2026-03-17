@@ -75,24 +75,24 @@
 
 ## 8. Component — Event List
 
-- [ ] 8.1 Write test: `EventListComponent` renders 40 rows
-- [ ] 8.2 Write test: `EventListComponent` emits selected event when a row is clicked
-- [ ] 8.3 Create `src/app/features/dashboard/components/event-list/` — Material table, rows colour-coded by score band, click emits selected `DoseEventRow`
-- [ ] 8.4 Add `<app-event-list>` to `app.html`
-- [ ] 8.5 Run `ng serve` — event table visible, rows clickable ✓
-- [ ] 8.6 Run `ng test` — event list tests pass ✓
+- [x] 8.1 Write test: `EventListComponent` renders 40 rows
+- [x] 8.2 Write test: `EventListComponent` emits selected event when a row is clicked
+- [x] 8.3 Create `src/app/features/dashboard/components/event-list/` — Material table, rows colour-coded by score band, click emits selected `DoseEventRow`
+- [x] 8.4 Add `<app-event-list>` to `app.html`
+- [x] 8.5 Run `ng serve` — event table visible, rows clickable ✓
+- [x] 8.6 Run `ng test` — event list tests pass ✓
 
 ## 9. Component — Event Detail Panel
 
-- [ ] 9.1 Write test: `EventDetailPanelComponent` emits `closed` output when close button is clicked
-- [ ] 9.2 Write test: `EventDetailPanelComponent` renders a metric row for each of the 5 telemetry metrics
-- [ ] 9.3 Create `src/app/features/dashboard/components/event-detail-panel/` — Material drawer, ECharts radar, metric rows with `MetricBadgeComponent`, close button
-- [ ] 9.4 Connect `EventListComponent` row click to open `EventDetailPanelComponent` in `app.html`
-- [ ] 9.5 Run `ng serve` — clicking a row opens drawer with radar + metric breakdown ✓
-- [ ] 9.6 Run `ng test` — event detail tests pass ✓
+- [x] 9.1 Write test: `EventDetailPanelComponent` emits `closed` output when close button is clicked
+- [x] 9.2 Write test: `EventDetailPanelComponent` renders a metric row for each of the 5 telemetry metrics
+- [x] 9.3 Create `src/app/features/dashboard/components/event-detail-panel/` — Material drawer, ECharts radar, metric rows with `MetricBadgeComponent`, close button
+- [x] 9.4 Connect `EventListComponent` row click to open `EventDetailPanelComponent` in `app.html`
+- [x] 9.5 Run `ng serve` — clicking a row opens drawer with radar + metric breakdown ✓
+- [x] 9.6 Run `ng test` — event detail tests pass ✓
 
 ## 10. Final Verification
 
-- [ ] 10.1 Run `ng test` — all 13 tests pass with no failures ✓
-- [ ] 10.2 Run `ng build` — production build compiles with no errors ✓
+- [x] 10.1 Run `ng test` — all 27 tests pass with no failures ✓
+- [x] 10.2 Run `ng build` — production build compiles with no errors ✓
 - [ ] 10.3 Run `ng serve` — visual review: all three sections render, morning/evening gap visible, rescue events annotated, detail drawer opens and closes correctly ✓

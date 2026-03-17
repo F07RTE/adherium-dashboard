@@ -1,11 +1,18 @@
 <mat-toolbar color="primary">
+  <span class="toolbar-spacer"></span>
   <span>{{ title }}</span>
+  <span class="toolbar-spacer"></span>
 </mat-toolbar>
 
 <main class="adh-page-content">
   <app-patient-header />
   <app-adherence-overview />
   <app-technique-quality />
+  <app-event-list (eventSelected)="openDetail($event)" />
+  <app-event-detail-panel
+    [event]="selectedEvent()"
+    [visible]="detailVisible()"
+    (closed)="closeDetail()" />
   <router-outlet />
 </main>
 
