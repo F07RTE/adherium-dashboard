@@ -36,15 +36,15 @@
 
 ## 4. Foundation — DashboardService & View Models
 
-- [ ] 4.1 Create `features/dashboard/models/` — `adherence-summary.model.ts`, `daily-breakdown.model.ts`, `dose-event-row.model.ts`
-- [ ] 4.2 Write test: `DashboardService` — adherence = 34/38 = 89.5%
-- [ ] 4.3 Write test: `DashboardService` — morning avg technique score > evening avg
-- [ ] 4.4 Write test: all rescue events have `scheduled_time: null`
-- [ ] 4.5 Write test: all 4 missed events are 20:00 evening doses
-- [ ] 4.6 Write test: all rescue events have technique score ≤ 45
-- [ ] 4.7 Write test: every rescue event is on the same day or day after a missed or low-scoring (< 60) evening controller dose
-- [ ] 4.8 Create `src/app/features/dashboard/services/dashboard.service.ts` — implement `getSummary()`, `getDailyBreakdown()`, `getDoseEvents()`
-- [ ] 4.9 Run `ng test` — all service tests pass ✓
+- [x] 4.1 Create `features/dashboard/models/` — `adherence-summary.model.ts`, `daily-breakdown.model.ts`, `dose-event-row.model.ts`
+- [x] 4.2 Write test: `DashboardService` — adherence = 34/38 = 89.5%
+- [x] 4.3 Write test: `DashboardService` — morning avg technique score > evening avg
+- [x] 4.4 Write test: all rescue events have `scheduled_time: null`
+- [x] 4.5 Write test: all 4 missed events are 20:00 evening doses
+- [x] 4.6 Write test: all rescue events have technique score ≤ 45
+- [x] 4.7 Write test: every rescue event is on the same day or day after a missed or low-scoring (< 70) evening controller dose
+- [x] 4.8 Create `src/app/features/dashboard/services/dashboard.service.ts` — implement `getSummary()`, `getDailyBreakdown()`, `getDoseEvents()`
+- [x] 4.9 Run `ng test` — all service tests pass ✓
 
 ## 5. Component — Patient Header
 
