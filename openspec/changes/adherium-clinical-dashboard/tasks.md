@@ -1,11 +1,11 @@
 ## 1. Project Setup
 
-- [ ] 1.1 Add `ngx-echarts` and `echarts` to `package.json` and install
-- [ ] 1.2 Run `ng add @angular/material` to install Material and configure the theme
-- [ ] 1.3 Extract JSON from `adherencejson.rtf` and save as `src/assets/adherence-data.json`
-- [ ] 1.4 Register `src/assets/adherence-data.json` in `angular.json` assets array
-- [ ] 1.5 Add global Material theme tokens and base layout to `styles.css`
-- [ ] 1.6 Set up app shell in `app.html` — Material toolbar + empty page layout ready to receive components one by one
+- [x] 1.1 Add `ngx-echarts` and `echarts` to `package.json` and install
+- [x] 1.2 Run `ng add @angular/material` to install Material and configure the theme
+- [x] 1.3 Extract JSON from `adherencejson.rtf` and save as `src/assets/adherence-data.json`
+- [x] 1.4 Register `src/assets/adherence-data.json` in `angular.json` assets array
+- [x] 1.5 Add global Material theme tokens and base layout to `styles.css`
+- [x] 1.6 Set up app shell in `app.html` — Material toolbar + empty page layout ready to receive components one by one
 
 ## 2. Foundation — Domain Models & Data Access
 

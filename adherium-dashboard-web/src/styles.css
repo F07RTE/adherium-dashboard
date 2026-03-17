@@ -1,1 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+
+:root {
+  --adh-spacing-sm: 8px;
+  --adh-spacing-md: 16px;
+  --adh-spacing-lg: 24px;
+  --adh-content-max-width: 1280px;
+}
+
+.adh-page-content {
+  max-width: var(--adh-content-max-width);
+  margin: 0 auto;
+  padding: var(--adh-spacing-md);
+}
+
+.adh-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--adh-spacing-md);
+}
