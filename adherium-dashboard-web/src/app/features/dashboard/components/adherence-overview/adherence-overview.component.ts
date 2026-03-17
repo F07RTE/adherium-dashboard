@@ -91,10 +91,15 @@ export class AdherenceOverviewComponent implements OnInit {
     const amScores   = breakdown.map(d => d.morningDose?.techniqueScore ?? null);
     const pmScores   = breakdown.map(d => (!d.missedEvening && d.eveningDose) ? d.eveningDose.techniqueScore : null);
 
+    const dailyMean: (number | null)[] = breakdown.map(d => {
+      const vals = [d.morningDose?.techniqueScore, d.eveningDose?.techniqueScore].filter((v): v is number => v != null);
+      return vals.length ? Math.round(vals.reduce((s, v) => s + v, 0) / vals.length * 10) / 10 : null;
+    });
+
     return {
       tooltip: { trigger: 'axis' },
       legend: {
-        data: ['AM Taken', 'PM Taken', 'PM Missed', 'Rescue', 'AM Score', 'PM Score'],
+        data: ['AM Taken', 'PM Taken', 'PM Missed', 'Rescue', 'AM Score', 'PM Score', 'Daily Avg'],
         bottom: 0,
         itemHeight: 10,
         textStyle: { fontSize: 11 },
@@ -163,7 +168,7 @@ export class AdherenceOverviewComponent implements OnInit {
           data: amScores,
           smooth: true,
           showSymbol: false,
-          lineStyle: { color: '#1565c0', width: 2 },
+          lineStyle: { color: '#1565c0', width: 1.5, opacity: 0.5 },
           markLine: {
             silent: true,
             symbol: 'none',
@@ -180,7 +185,17 @@ export class AdherenceOverviewComponent implements OnInit {
           data: pmScores,
           smooth: true,
           showSymbol: false,
-          lineStyle: { color: '#42a5f5', width: 2, type: 'dashed' },
+          lineStyle: { color: '#42a5f5', width: 1.5, type: 'dashed', opacity: 0.5 },
+        },
+        {
+          name: 'Daily Avg',
+          type: 'line',
+          yAxisIndex: 1,
+          data: dailyMean,
+          smooth: true,
+          showSymbol: false,
+          lineStyle: { color: '#6a1b9a', width: 2.5 },
+          z: 10,
         },
       ],
     };
