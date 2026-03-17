@@ -4,6 +4,7 @@ export interface AdherenceSummary {
   controllerScheduled: number;
   missedCount: number;
   rescueCount: number;
+  avgTechniqueScore: number;
   morningAvgScore: number;
   eveningAvgScore: number;
 }

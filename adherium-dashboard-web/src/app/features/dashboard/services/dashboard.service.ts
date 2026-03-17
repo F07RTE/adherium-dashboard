@@ -61,12 +61,17 @@ export class DashboardService {
         .filter(e => e.body.scheduled_time === time)
         .map(e => e.body['adherium:inhaler_technique_telemetry'].technique_score);
 
+    const allScores = data.dose_events.map(
+      e => e.body['adherium:inhaler_technique_telemetry'].technique_score,
+    );
+
     return {
       adherencePct: Math.round((controller.length / scheduled) * 1000) / 10,
       controllerTaken: controller.length,
       controllerScheduled: scheduled,
       missedCount: data.missed_dose_events.length,
       rescueCount: rescue.length,
+      avgTechniqueScore: avg(allScores),
       morningAvgScore: avg(scoresByTime('08:00')),
       eveningAvgScore: avg(scoresByTime('20:00')),
     };

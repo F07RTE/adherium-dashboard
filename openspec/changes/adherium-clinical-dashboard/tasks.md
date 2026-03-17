@@ -57,12 +57,12 @@
 
 ## 6. Component — Adherence Overview
 
-- [ ] 6.1 Write test: `AdherenceOverviewComponent` displays adherence percentage KPI
-- [ ] 6.2 Write test: `AdherenceOverviewComponent` displays rescue count KPI
-- [ ] 6.3 Create `src/app/features/dashboard/components/adherence-overview/` — ECharts calendar heatmap + 3 KPI stat cards
-- [ ] 6.4 Add `<app-adherence-overview>` to `app.html` below patient header
-- [ ] 6.5 Run `ng serve` — calendar heatmap and KPI cards visible ✓
-- [ ] 6.6 Run `ng test` — adherence overview tests pass ✓
+- [x] 6.1 Write test: `AdherenceOverviewComponent` displays adherence percentage KPI
+- [x] 6.2 Write test: `AdherenceOverviewComponent` displays rescue count KPI
+- [x] 6.3 Create `src/app/features/dashboard/components/adherence-overview/` — ECharts calendar heatmap + 3 KPI stat cards
+- [x] 6.4 Add `<app-adherence-overview>` to `app.html` below patient header
+- [x] 6.5 Run `ng serve` — calendar heatmap and KPI cards visible ✓
+- [x] 6.6 Run `ng test` — adherence overview tests pass ✓
 
 ## 7. Component — Technique Quality
 
