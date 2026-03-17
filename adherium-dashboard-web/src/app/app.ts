@@ -3,14 +3,13 @@ import { RouterOutlet } from '@angular/router';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { PatientHeaderComponent } from './features/dashboard/components/patient-header/patient-header.component';
 import { AdherenceOverviewComponent } from './features/dashboard/components/adherence-overview/adherence-overview.component';
-import { TechniqueQualityComponent } from './features/dashboard/components/technique-quality/technique-quality.component';
 import { EventListComponent } from './features/dashboard/components/event-list/event-list.component';
 import { EventDetailPanelComponent } from './features/dashboard/components/event-detail-panel/event-detail-panel.component';
 import { DoseEventRow } from './features/dashboard/models/dose-event-row.model';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, MatToolbarModule, PatientHeaderComponent, AdherenceOverviewComponent, TechniqueQualityComponent, EventListComponent, EventDetailPanelComponent],
+  imports: [RouterOutlet, MatToolbarModule, PatientHeaderComponent, AdherenceOverviewComponent, EventListComponent, EventDetailPanelComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

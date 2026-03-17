@@ -104,7 +104,7 @@ export class AdherenceOverviewComponent implements OnInit {
         itemHeight: 10,
         textStyle: { fontSize: 11 },
       },
-      grid: { top: 16, left: 48, right: 56, bottom: 52 },
+      grid: { top: 16, left: 48, right: 70, bottom: 52 },
       xAxis: {
         type: 'category',
         data: dates,
@@ -173,8 +173,8 @@ export class AdherenceOverviewComponent implements OnInit {
             silent: true,
             symbol: 'none',
             data: [
-              { yAxis: 80, lineStyle: { color: '#2e7d32', type: 'dashed', width: 1 }, label: { formatter: '80', fontSize: 9 } },
-              { yAxis: 60, lineStyle: { color: '#f57f17', type: 'dashed', width: 1 }, label: { formatter: '60', fontSize: 9 } },
+              { yAxis: 80, lineStyle: { color: '#2e7d32', type: 'dashed', width: 1 }, label: { show: false } },
+              { yAxis: 60, lineStyle: { color: '#f57f17', type: 'dashed', width: 1 }, label: { show: false } },
             ],
           },
         },
