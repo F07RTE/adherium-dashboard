@@ -1,7 +1,11 @@
 import { TestBed } from '@angular/core/testing';
 import { provideHttpClient } from '@angular/common/http';
 import { provideHttpClientTesting } from '@angular/common/http/testing';
+import { vi } from 'vitest';
 import { App } from './app';
+
+// ngx-echarts uses ResizeObserver internally; polyfill for jsdom test env
+vi.stubGlobal('ResizeObserver', class { observe() {} unobserve() {} disconnect() {} });
 
 describe('App', () => {
   beforeEach(async () => {

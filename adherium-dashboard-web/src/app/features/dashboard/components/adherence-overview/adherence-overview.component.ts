@@ -120,7 +120,7 @@ export class AdherenceOverviewComponent implements OnInit {
         left: 40,
         right: 20,
         range: ['2025-01-06', '2025-01-24'],
-        cellSize: ['auto', 24],
+        cellSize: ['auto', 20],
         dayLabel: { nameMap: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'] },
         monthLabel: { show: true },
       },

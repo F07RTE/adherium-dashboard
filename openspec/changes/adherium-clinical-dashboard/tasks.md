@@ -66,12 +66,12 @@
 
 ## 7. Component — Technique Quality
 
-- [ ] 7.1 Write test: `TechniqueQualityComponent` produces higher AM average than PM average from data
-- [ ] 7.2 Write test: `TechniqueQualityComponent` marks rescue event days distinctly in chart data
-- [ ] 7.3 Create `src/app/features/dashboard/components/technique-quality/` — ECharts grouped bar (AM vs PM) + score trend line with threshold bands and rescue markers
-- [ ] 7.4 Add `<app-technique-quality>` to `app.html`
-- [ ] 7.5 Run `ng serve` — grouped bar and trend line visible, morning/evening gap apparent ✓
-- [ ] 7.6 Run `ng test` — technique quality tests pass ✓
+- [x] 7.1 Write test: `TechniqueQualityComponent` produces higher AM average than PM average from data
+- [x] 7.2 Write test: `TechniqueQualityComponent` marks rescue event days distinctly in chart data
+- [x] 7.3 Create `src/app/features/dashboard/components/technique-quality/` — ECharts grouped bar (AM vs PM) + score trend line with threshold bands and rescue markers
+- [x] 7.4 Add `<app-technique-quality>` to `app.html`
+- [x] 7.5 Run `ng serve` — grouped bar and trend line visible, morning/evening gap apparent ✓
+- [x] 7.6 Run `ng test` — technique quality tests pass ✓
 
 ## 8. Component — Event List
 
