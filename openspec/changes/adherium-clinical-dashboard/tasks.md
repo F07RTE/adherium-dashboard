@@ -9,30 +9,30 @@
 
 ## 2. Foundation — Domain Models & Data Access
 
-- [ ] 2.1 Create `src/app/domain/technique-thresholds.model.ts`
-- [ ] 2.2 Create `src/app/domain/technique-telemetry.model.ts`
-- [ ] 2.3 Create `src/app/domain/patient.model.ts`
-- [ ] 2.4 Create `src/app/domain/medication.model.ts`
-- [ ] 2.5 Create `src/app/domain/dose-event.model.ts`
-- [ ] 2.6 Create `src/app/domain/missed-dose-event.model.ts`
-- [ ] 2.7 Create `src/app/domain/adherence-data.model.ts` — root interface composing all models
-- [ ] 2.8 Write test: `AdherenceDataSource.getData()` returns 40 dose events
-- [ ] 2.9 Write test: `AdherenceDataSource.getData()` returns 4 missed dose events
-- [ ] 2.10 Create `src/app/core/data-access/adherence.datasource.ts` — `getData(): Observable<AdherenceData>` via `HttpClient`
-- [ ] 2.11 Provide `AdherenceDataSource` and `provideHttpClient()` in `app.config.ts`
-- [ ] 2.12 Run `ng test` — data source tests pass ✓
+- [x] 2.1 Create `src/app/domain/technique-thresholds.model.ts`
+- [x] 2.2 Create `src/app/domain/technique-telemetry.model.ts`
+- [x] 2.3 Create `src/app/domain/patient.model.ts`
+- [x] 2.4 Create `src/app/domain/medication.model.ts`
+- [x] 2.5 Create `src/app/domain/dose-event.model.ts`
+- [x] 2.6 Create `src/app/domain/missed-dose-event.model.ts`
+- [x] 2.7 Create `src/app/domain/adherence-data.model.ts` — root interface composing all models
+- [x] 2.8 Write test: `AdherenceDataSource.getData()` returns 40 dose events
+- [x] 2.9 Write test: `AdherenceDataSource.getData()` returns 4 missed dose events
+- [x] 2.10 Create `src/app/core/data-access/adherence.datasource.ts` — `getData(): Observable<AdherenceData>` via `HttpClient`
+- [x] 2.11 Provide `AdherenceDataSource` and `provideHttpClient()` in `app.config.ts`
+- [x] 2.12 Run `ng test` — data source tests pass ✓
 
 ## 3. Foundation — TechniqueRatingPipe & MetricBadge
 
-- [ ] 3.1 Write test: `TechniqueRatingPipe` — shake_duration 3200ms → `'good'`
-- [ ] 3.2 Write test: `TechniqueRatingPipe` — shake_duration 2500ms → `'acceptable'`
-- [ ] 3.3 Write test: `TechniqueRatingPipe` — shake_duration 1500ms → `'poor'`
-- [ ] 3.4 Write test: `TechniqueRatingPipe` — device_orientation 10 deg → `'good'` (inverted)
-- [ ] 3.5 Write test: `TechniqueRatingPipe` — device_orientation 20 deg → `'acceptable'` (inverted)
-- [ ] 3.6 Write test: `TechniqueRatingPipe` — device_orientation 40 deg → `'poor'` (inverted)
-- [ ] 3.7 Create `src/app/shared/pipes/technique-rating.pipe.ts` — pure pipe with inverted logic for `device_orientation`
-- [ ] 3.8 Create `src/app/shared/components/metric-badge/metric-badge.component.ts` — `@Input() rating` with green/amber/red styles
-- [ ] 3.9 Run `ng test` — pipe tests pass ✓
+- [x] 3.1 Write test: `TechniqueRatingPipe` — shake_duration 3200ms → `'good'`
+- [x] 3.2 Write test: `TechniqueRatingPipe` — shake_duration 2500ms → `'acceptable'`
+- [x] 3.3 Write test: `TechniqueRatingPipe` — shake_duration 1500ms → `'poor'`
+- [x] 3.4 Write test: `TechniqueRatingPipe` — device_orientation 10 deg → `'good'` (inverted)
+- [x] 3.5 Write test: `TechniqueRatingPipe` — device_orientation 20 deg → `'acceptable'` (inverted)
+- [x] 3.6 Write test: `TechniqueRatingPipe` — device_orientation 40 deg → `'poor'` (inverted)
+- [x] 3.7 Create `src/app/shared/pipes/technique-rating.pipe.ts` — pure pipe with inverted logic for `device_orientation`
+- [x] 3.8 Create `src/app/shared/components/metric-badge/metric-badge.component.ts` — `@Input() rating` with green/amber/red styles
+- [x] 3.9 Run `ng test` — pipe tests pass ✓
 
 ## 4. Foundation — DashboardService & View Models
 
