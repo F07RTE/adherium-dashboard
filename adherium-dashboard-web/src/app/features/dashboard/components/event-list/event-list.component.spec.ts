@@ -4,11 +4,12 @@ import { of } from 'rxjs';
 import { EventListComponent } from './event-list.component';
 import { DashboardService } from '../../services/dashboard.service';
 import { DoseEventRow } from '../../models/dose-event-row.model';
+import { DailyBreakdown } from '../../models/daily-breakdown.model';
 
 function makeDoseRow(id: string, score: number, type: 'controller' | 'rescue' = 'controller'): DoseEventRow {
   return {
     id,
-    dateTime: `2025-01-${id.padStart(2, '0')}T08:00:00Z`,
+    dateTime: `2025-01-06T08:00:00Z`,
     medicationType: type,
     scheduledTime: type === 'controller' ? '08:00' : null,
     techniqueScore: score,
@@ -23,11 +24,13 @@ function makeDoseRow(id: string, score: number, type: 'controller' | 'rescue' = 
   };
 }
 
-const mockEvents: DoseEventRow[] = Array.from({ length: 40 }, (_, i) =>
-  makeDoseRow(String(i + 1), 70 + (i % 30)),
-);
+const mockBreakdown: DailyBreakdown[] = [
+  { date: '2025-01-06', morningDose: makeDoseRow('c1', 82), eveningDose: makeDoseRow('c2', 64), rescueDoses: [], missedEvening: false },
+  { date: '2025-01-07', morningDose: makeDoseRow('c3', 91), eveningDose: makeDoseRow('c4', 85), rescueDoses: [makeDoseRow('r1', 45, 'rescue')], missedEvening: false },
+  { date: '2025-01-08', morningDose: makeDoseRow('c5', 73), eveningDose: null, rescueDoses: [], missedEvening: true },
+];
 
-describe('EventListComponent', () => {
+describe('EventListComponent (dose heatmap)', () => {
   let fixture: ComponentFixture<EventListComponent>;
 
   beforeEach(async () => {
@@ -36,7 +39,7 @@ describe('EventListComponent', () => {
       providers: [
         {
           provide: DashboardService,
-          useValue: { getDoseEvents: () => of(mockEvents) },
+          useValue: { getDailyBreakdown: () => of(mockBreakdown) },
         },
       ],
     }).compileComponents();
@@ -44,22 +47,22 @@ describe('EventListComponent', () => {
     await fixture.whenStable();
   });
 
-  it('renders 40 rows in the event table', () => {
+  it('renders one heatmap cell per date+slot combination (3 dates × 3 slots = 9)', () => {
     const el: HTMLElement = fixture.nativeElement;
-    const rows = el.querySelectorAll('tr[data-event-row]');
-    expect(rows.length).toBe(40);
+    const cells = el.querySelectorAll('[data-heatmap-cell]');
+    expect(cells.length).toBe(9);
   });
 
-  it('emits the selected event when a row is clicked', () => {
+  it('emits the selected event when an AM cell is clicked', () => {
     const comp = fixture.componentInstance;
     let emitted: DoseEventRow | undefined;
     comp.eventSelected.subscribe((e: DoseEventRow) => (emitted = e));
 
     const el: HTMLElement = fixture.nativeElement;
-    const row = el.querySelector<HTMLElement>('tr[data-event-row]')!;
-    row.click();
+    const amCell = el.querySelector<HTMLElement>('[data-heatmap-cell="2025-01-06-AM"]')!;
+    amCell.click();
 
     expect(emitted).toBeDefined();
-    expect(emitted!.id).toBe(mockEvents[0].id);
+    expect(emitted!.id).toBe('c1');
   });
 });
