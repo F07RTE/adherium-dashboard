@@ -48,12 +48,12 @@
 
 ## 5. Component — Patient Header
 
-- [ ] 5.1 Write test: `PatientHeaderComponent` renders patient initials and age
-- [ ] 5.2 Write test: `PatientHeaderComponent` renders condition name
-- [ ] 5.3 Create `src/app/features/dashboard/components/patient-header/` — displays initials, age, condition, medication type pills
-- [ ] 5.4 Add `<app-patient-header>` to `app.html`
-- [ ] 5.5 Run `ng serve` — patient header visible on screen ✓
-- [ ] 5.6 Run `ng test` — patient header tests pass ✓
+- [x] 5.1 Write test: `PatientHeaderComponent` renders patient initials and age
+- [x] 5.2 Write test: `PatientHeaderComponent` renders condition name
+- [x] 5.3 Create `src/app/features/dashboard/components/patient-header/` — displays initials, age, condition, medication type pills
+- [x] 5.4 Add `<app-patient-header>` to `app.html`
+- [x] 5.5 Run `ng serve` — patient header visible on screen ✓
+- [x] 5.6 Run `ng test` — patient header tests pass ✓
 
 ## 6. Component — Adherence Overview
 
