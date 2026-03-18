@@ -1,0 +1,1064 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2761
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \{\
+  "$schema": "https://www.openmhealth.org/schema/omh",\
+  "_metadata": \{\
+    "description": "Simulated patient inhaler adherence data for Adherium clinical dashboard assessment. Data follows Open mHealth (OMH) schema conventions with Adherium-specific extensions for inhaler technique telemetry.",\
+    "schemas_used": [\
+      "omh:data-point:2.0",\
+      "omh:header:1.2",\
+      "omh:single-medication-dose-taken:1.0",\
+      "omh:medication:1.0",\
+      "omh:patient-medication-schedule:1.0",\
+      "omh:reason-single-medication-dose-not-taken:1.0",\
+      "omh:inspiratory-time:1.0",\
+      "omh:orientation:1.0",\
+      "adherium:inhaler-technique-telemetry:1.0"\
+    ],\
+    "notes": "The adherium:inhaler-technique-telemetry schema is a custom extension that captures sensor data from Hailie smart inhaler devices. All OMH-standard fields follow published schema conventions. Technique thresholds are provided as reference data for clinical display."\
+  \},\
+  "patient": \{\
+    "external_id": "PAT-2847",\
+    "demographics": \{\
+      "initials": "J.M.",\
+      "age": \{\
+        "value": 42,\
+        "unit": "yr"\
+      \}\
+    \},\
+    "condition": \{\
+      "name": "Moderate Persistent Asthma",\
+      "code": \{\
+        "system": "SNOMED-CT",\
+        "value": "195967001",\
+        "display": "Asthma"\
+      \}\
+    \}\
+  \},\
+  "medications": [\
+    \{\
+      "header": \{\
+        "schema_id": \{\
+          "namespace": "omh",\
+          "name": "medication",\
+          "version": "1.0"\
+        \}\
+      \},\
+      "body": \{\
+        "medication_id": "MED-001",\
+        "medication_name": "Fluticasone/Salmeterol",\
+        "medication_code": \{\
+          "system": "RxNorm",\
+          "value": "896188",\
+          "display": "Fluticasone propionate 0.25 MG/ACTUAT / salmeterol 0.05 MG/ACTUAT Dry Powder Inhaler"\
+        \},\
+        "route": "inhaled",\
+        "strength": \{\
+          "value": 250,\
+          "unit": "mcg"\
+        \},\
+        "medication_type": "controller"\
+      \}\
+    \},\
+    \{\
+      "header": \{\
+        "schema_id": \{\
+          "namespace": "omh",\
+          "name": "medication",\
+          "version": "1.0"\
+        \}\
+      \},\
+      "body": \{\
+        "medication_id": "MED-002",\
+        "medication_name": "Albuterol HFA",\
+        "medication_code": \{\
+          "system": "RxNorm",\
+          "value": "245314",\
+          "display": "albuterol 0.09 MG/ACTUAT Metered Dose Inhaler"\
+        \},\
+        "route": "inhaled",\
+        "strength": \{\
+          "value": 90,\
+          "unit": "mcg"\
+        \},\
+        "medication_type": "rescue"\
+      \}\
+    \}\
+  ],\
+  "medication_schedules": [\
+    \{\
+      "header": \{\
+        "schema_id": \{\
+          "namespace": "omh",\
+          "name": "patient-medication-schedule",\
+          "version": "1.0"\
+        \}\
+      \},\
+      "body": \{\
+        "medication_id": "MED-001",\
+        "schedule": [\
+          \{\
+            "scheduled_time": "08:00",\
+            "time_window": \{\
+              "window_before": \{ "value": 60, "unit": "min" \},\
+              "window_after": \{ "value": 60, "unit": "min" \}\
+            \}\
+          \},\
+          \{\
+            "scheduled_time": "20:00",\
+            "time_window": \{\
+              "window_before": \{ "value": 60, "unit": "min" \},\
+              "window_after": \{ "value": 60, "unit": "min" \}\
+            \}\
+          \}\
+        ],\
+        "prescribed_doses_per_day": 2\
+      \}\
+    \},\
+    \{\
+      "header": \{\
+        "schema_id": \{\
+          "namespace": "omh",\
+          "name": "patient-medication-schedule",\
+          "version": "1.0"\
+        \}\
+      \},\
+      "body": \{\
+        "medication_id": "MED-002",\
+        "schedule": [],\
+        "prescribed_doses_per_day": 0,\
+        "notes": "As needed (PRN) for acute symptom relief"\
+      \}\
+    \}\
+  ],\
+  "dose_events": [\
+    \{\
+      "header": \{\
+        "id": "EVT-001",\
+        "schema_id": \{ "namespace": "omh", "name": "single-medication-dose-taken", "version": "1.0" \},\
+        "creation_date_time": "2025-01-06T08:12:33Z",\
+        "acquisition_provenance": \{\
+          "source_name": "Hailie Sensor",\
+          "modality": "sensed"\
+        \}\
+      \},\
+      "body": \{\
+        "medication_id": "MED-001",\
+        "effective_time_frame": \{\
+          "date_time": "2025-01-06T08:12:33Z"\
+        \},\
+        "scheduled_time": "08:00",\
+        "adherium:inhaler_technique_telemetry": \{\
+          "shake_duration": \{ "value": 3200, "unit": "ms" \},\
+          "inspiratory_time": \{ "value": 2800, "unit": "ms" \},\
+          "peak_inspiratory_flow_rate": \{ "value": 62.3, "unit": "L/min" \},\
+          "device_orientation": \{ "value": 12, "unit": "deg" \},\
+          "estimated_delivered_volume": \{ "value": 1.8, "unit": "mL" \},\
+          "technique_score": 82\
+        \}\
+      \}\
+    \},\
+    \{\
+      "header": \{\
+        "id": "EVT-002",\
+        "schema_id": \{ "namespace": "omh", "name": "single-medication-dose-taken", "version": "1.0" \},\
+        "creation_date_time": "2025-01-06T20:45:10Z",\
+        "acquisition_provenance": \{ "source_name": "Hailie Sensor", "modality": "sensed" \}\
+      \},\
+      "body": \{\
+        "medication_id": "MED-001",\
+        "effective_time_frame": \{ "date_time": "2025-01-06T20:45:10Z" \},\
+        "scheduled_time": "20:00",\
+        "adherium:inhaler_technique_telemetry": \{\
+          "shake_duration": \{ "value": 2100, "unit": "ms" \},\
+          "inspiratory_time": \{ "value": 2200, "unit": "ms" \},\
+          "peak_inspiratory_flow_rate": \{ "value": 55.1, "unit": "L/min" \},\
+          "device_orientation": \{ "value": 28, "unit": "deg" \},\
+          "estimated_delivered_volume": \{ "value": 1.4, "unit": "mL" \},\
+          "technique_score": 64\
+        \}\
+      \}\
+    \},\
+    \{\
+      "header": \{\
+        "id": "EVT-003",\
+        "schema_id": \{ "namespace": "omh", "name": "single-medication-dose-taken", "version": "1.0" \},\
+        "creation_date_time": "2025-01-07T08:05:22Z",\
+        "acquisition_provenance": \{ "source_name": "Hailie Sensor", "modality": "sensed" \}\
+      \},\
+      "body": \{\
+        "medication_id": "MED-001",\
+        "effective_time_frame": \{ "date_time": "2025-01-07T08:05:22Z" \},\
+        "scheduled_time": "08:00",\
+        "adherium:inhaler_technique_telemetry": \{\
+          "shake_duration": \{ "value": 3500, "unit": "ms" \},\
+          "inspiratory_time": \{ "value": 3100, "unit": "ms" \},\
+          "peak_inspiratory_flow_rate": \{ "value": 68.7, "unit": "L/min" \},\
+          "device_orientation": \{ "value": 8, "unit": "deg" \},\
+          "estimated_delivered_volume": \{ "value": 2.1, "unit": "mL" \},\
+          "technique_score": 91\
+        \}\
+      \}\
+    \},\
+    \{\
+      "header": \{\
+        "id": "EVT-004",\
+        "schema_id": \{ "namespace": "omh", "name": "single-medication-dose-taken", "version": "1.0" \},\
+        "creation_date_time": "2025-01-07T20:15:44Z",\
+        "acquisition_provenance": \{ "source_name": "Hailie Sensor", "modality": "sensed" \}\
+      \},\
+      "body": \{\
+        "medication_id": "MED-001",\
+        "effective_time_frame": \{ "date_time": "2025-01-07T20:15:44Z" \},\
+        "scheduled_time": "20:00",\
+        "adherium:inhaler_technique_telemetry": \{\
+          "shake_duration": \{ "value": 3100, "unit": "ms" \},\
+          "inspiratory_time": \{ "value": 2900, "unit": "ms" \},\
+          "peak_inspiratory_flow_rate": \{ "value": 64.2, "unit": "L/min" \},\
+          "device_orientation": \{ "value": 15, "unit": "deg" \},\
+          "estimated_delivered_volume": \{ "value": 1.9, "unit": "mL" \},\
+          "technique_score": 85\
+        \}\
+      \}\
+    \},\
+    \{\
+      "header": \{\
+        "id": "EVT-005",\
+        "schema_id": \{ "namespace": "omh", "name": "single-medication-dose-taken", "version": "1.0" \},\
+        "creation_date_time": "2025-01-07T14:32:00Z",\
+        "acquisition_provenance": \{ "source_name": "Hailie Sensor", "modality": "sensed" \}\
+      \},\
+      "body": \{\
+        "medication_id": "MED-002",\
+        "effective_time_frame": \{ "date_time": "2025-01-07T14:32:00Z" \},\
+        "scheduled_time": null,\
+        "adherium:inhaler_technique_telemetry": \{\
+          "shake_duration": \{ "value": 1800, "unit": "ms" \},\
+          "inspiratory_time": \{ "value": 1900, "unit": "ms" \},\
+          "peak_inspiratory_flow_rate": \{ "value": 48.3, "unit": "L/min" \},\
+          "device_orientation": \{ "value": 35, "unit": "deg" \},\
+          "estimated_delivered_volume": \{ "value": 1.1, "unit": "mL" \},\
+          "technique_score": 45\
+        \}\
+      \}\
+    \},\
+    \{\
+      "header": \{\
+        "id": "EVT-006",\
+        "schema_id": \{ "namespace": "omh", "name": "single-medication-dose-taken", "version": "1.0" \},\
+        "creation_date_time": "2025-01-08T08:42:18Z",\
+        "acquisition_provenance": \{ "source_name": "Hailie Sensor", "modality": "sensed" \}\
+      \},\
+      "body": \{\
+        "medication_id": "MED-001",\
+        "effective_time_frame": \{ "date_time": "2025-01-08T08:42:18Z" \},\
+        "scheduled_time": "08:00",\
+        "adherium:inhaler_technique_telemetry": \{\
+          "shake_duration": \{ "value": 2800, "unit": "ms" \},\
+          "inspiratory_time": \{ "value": 2600, "unit": "ms" \},\
+          "peak_inspiratory_flow_rate": \{ "value": 59.8, "unit": "L/min" \},\
+          "device_orientation": \{ "value": 18, "unit": "deg" \},\
+          "estimated_delivered_volume": \{ "value": 1.6, "unit": "mL" \},\
+          "technique_score": 73\
+        \}\
+      \}\
+    \},\
+    \{\
+      "header": \{\
+        "id": "EVT-007",\
+        "schema_id": \{ "namespace": "omh", "name": "single-medication-dose-taken", "version": "1.0" \},\
+        "creation_date_time": "2025-01-09T08:10:05Z",\
+        "acquisition_provenance": \{ "source_name": "Hailie Sensor", "modality": "sensed" \}\
+      \},\
+      "body": \{\
+        "medication_id": "MED-001",\
+        "effective_time_frame": \{ "date_time": "2025-01-09T08:10:05Z" \},\
+        "scheduled_time": "08:00",\
+        "adherium:inhaler_technique_telemetry": \{\
+          "shake_duration": \{ "value": 3400, "unit": "ms" \},\
+          "inspiratory_time": \{ "value": 3000, "unit": "ms" \},\
+          "peak_inspiratory_flow_rate": \{ "value": 66.1, "unit": "L/min" \},\
+          "device_orientation": \{ "value": 10, "unit": "deg" \},\
+          "estimated_delivered_volume": \{ "value": 2.0, "unit": "mL" \},\
+          "technique_score": 88\
+        \}\
+      \}\
+    \},\
+    \{\
+      "header": \{\
+        "id": "EVT-008",\
+        "schema_id": \{ "namespace": "omh", "name": "single-medication-dose-taken", "version": "1.0" \},\
+        "creation_date_time": "2025-01-09T20:30:22Z",\
+        "acquisition_provenance": \{ "source_name": "Hailie Sensor", "modality": "sensed" \}\
+      \},\
+      "body": \{\
+        "medication_id": "MED-001",\
+        "effective_time_frame": \{ "date_time": "2025-01-09T20:30:22Z" \},\
+        "scheduled_time": "20:00",\
+        "adherium:inhaler_technique_telemetry": \{\
+          "shake_duration": \{ "value": 2400, "unit": "ms" \},\
+          "inspiratory_time": \{ "value": 2100, "unit": "ms" \},\
+          "peak_inspiratory_flow_rate": \{ "value": 52.4, "unit": "L/min" \},\
+          "device_orientation": \{ "value": 22, "unit": "deg" \},\
+          "estimated_delivered_volume": \{ "value": 1.3, "unit": "mL" \},\
+          "technique_score": 58\
+        \}\
+      \}\
+    \},\
+    \{\
+      "header": \{\
+        "id": "EVT-009",\
+        "schema_id": \{ "namespace": "omh", "name": "single-medication-dose-taken", "version": "1.0" \},\
+        "creation_date_time": "2025-01-10T08:08:33Z",\
+        "acquisition_provenance": \{ "source_name": "Hailie Sensor", "modality": "sensed" \}\
+      \},\
+      "body": \{\
+        "medication_id": "MED-001",\
+        "effective_time_frame": \{ "date_time": "2025-01-10T08:08:33Z" \},\
+        "scheduled_time": "08:00",\
+        "adherium:inhaler_technique_telemetry": \{\
+          "shake_duration": \{ "value": 3600, "unit": "ms" \},\
+          "inspiratory_time": \{ "value": 3200, "unit": "ms" \},\
+          "peak_inspiratory_flow_rate": \{ "value": 70.5, "unit": "L/min" \},\
+          "device_orientation": \{ "value": 5, "unit": "deg" \},\
+          "estimated_delivered_volume": \{ "value": 2.2, "unit": "mL" \},\
+          "technique_score": 94\
+        \}\
+      \}\
+    \},\
+    \{\
+      "header": \{\
+        "id": "EVT-010",\
+        "schema_id": \{ "namespace": "omh", "name": "single-medication-dose-taken", "version": "1.0" \},\
+        "creation_date_time": "2025-01-10T21:12:48Z",\
+        "acquisition_provenance": \{ "source_name": "Hailie Sensor", "modality": "sensed" \}\
+      \},\
+      "body": \{\
+        "medication_id": "MED-001",\
+        "effective_time_frame": \{ "date_time": "2025-01-10T21:12:48Z" \},\
+        "scheduled_time": "20:00",\
+        "adherium:inhaler_technique_telemetry": \{\
+          "shake_duration": \{ "value": 1900, "unit": "ms" \},\
+          "inspiratory_time": \{ "value": 1800, "unit": "ms" \},\
+          "peak_inspiratory_flow_rate": \{ "value": 44.7, "unit": "L/min" \},\
+          "device_orientation": \{ "value": 40, "unit": "deg" \},\
+          "estimated_delivered_volume": \{ "value": 1.0, "unit": "mL" \},\
+          "technique_score": 38\
+        \}\
+      \}\
+    \},\
+    \{\
+      "header": \{\
+        "id": "EVT-011",\
+        "schema_id": \{ "namespace": "omh", "name": "single-medication-dose-taken", "version": "1.0" \},\
+        "creation_date_time": "2025-01-10T23:45:00Z",\
+        "acquisition_provenance": \{ "source_name": "Hailie Sensor", "modality": "sensed" \}\
+      \},\
+      "body": \{\
+        "medication_id": "MED-002",\
+        "effective_time_frame": \{ "date_time": "2025-01-10T23:45:00Z" \},\
+        "scheduled_time": null,\
+        "adherium:inhaler_technique_telemetry": \{\
+          "shake_duration": \{ "value": 1200, "unit": "ms" \},\
+          "inspiratory_time": \{ "value": 1500, "unit": "ms" \},\
+          "peak_inspiratory_flow_rate": \{ "value": 42.1, "unit": "L/min" \},\
+          "device_orientation": \{ "value": 45, "unit": "deg" \},\
+          "estimated_delivered_volume": \{ "value": 0.8, "unit": "mL" \},\
+          "technique_score": 32\
+        \}\
+      \}\
+    \},\
+    \{\
+      "header": \{\
+        "id": "EVT-012",\
+        "schema_id": \{ "namespace": "omh", "name": "single-medication-dose-taken", "version": "1.0" \},\
+        "creation_date_time": "2025-01-11T09:15:00Z",\
+        "acquisition_provenance": \{ "source_name": "Hailie Sensor", "modality": "sensed" \}\
+      \},\
+      "body": \{\
+        "medication_id": "MED-001",\
+        "effective_time_frame": \{ "date_time": "2025-01-11T09:15:00Z" \},\
+        "scheduled_time": "08:00",\
+        "adherium:inhaler_technique_telemetry": \{\
+          "shake_duration": \{ "value": 2600, "unit": "ms" \},\
+          "inspiratory_time": \{ "value": 2400, "unit": "ms" \},\
+          "peak_inspiratory_flow_rate": \{ "value": 56.8, "unit": "L/min" \},\
+          "device_orientation": \{ "value": 20, "unit": "deg" \},\
+          "estimated_delivered_volume": \{ "value": 1.5, "unit": "mL" \},\
+          "technique_score": 68\
+        \}\
+      \}\
+    \},\
+    \{\
+      "header": \{\
+        "id": "EVT-013",\
+        "schema_id": \{ "namespace": "omh", "name": "single-medication-dose-taken", "version": "1.0" \},\
+        "creation_date_time": "2025-01-12T08:03:15Z",\
+        "acquisition_provenance": \{ "source_name": "Hailie Sensor", "modality": "sensed" \}\
+      \},\
+      "body": \{\
+        "medication_id": "MED-001",\
+        "effective_time_frame": \{ "date_time": "2025-01-12T08:03:15Z" \},\
+        "scheduled_time": "08:00",\
+        "adherium:inhaler_technique_telemetry": \{\
+          "shake_duration": \{ "value": 3300, "unit": "ms" \},\
+          "inspiratory_time": \{ "value": 3100, "unit": "ms" \},\
+          "peak_inspiratory_flow_rate": \{ "value": 67.9, "unit": "L/min" \},\
+          "device_orientation": \{ "value": 7, "unit": "deg" \},\
+          "estimated_delivered_volume": \{ "value": 2.1, "unit": "mL" \},\
+          "technique_score": 90\
+        \}\
+      \}\
+    \},\
+    \{\
+      "header": \{\
+        "id": "EVT-014",\
+        "schema_id": \{ "namespace": "omh", "name": "single-medication-dose-taken", "version": "1.0" \},\
+        "creation_date_time": "2025-01-12T20:10:30Z",\
+        "acquisition_provenance": \{ "source_name": "Hailie Sensor", "modality": "sensed" \}\
+      \},\
+      "body": \{\
+        "medication_id": "MED-001",\
+        "effective_time_frame": \{ "date_time": "2025-01-12T20:10:30Z" \},\
+        "scheduled_time": "20:00",\
+        "adherium:inhaler_technique_telemetry": \{\
+          "shake_duration": \{ "value": 3000, "unit": "ms" \},\
+          "inspiratory_time": \{ "value": 2700, "unit": "ms" \},\
+          "peak_inspiratory_flow_rate": \{ "value": 61.5, "unit": "L/min" \},\
+          "device_orientation": \{ "value": 14, "unit": "deg" \},\
+          "estimated_delivered_volume": \{ "value": 1.7, "unit": "mL" \},\
+          "technique_score": 79\
+        \}\
+      \}\
+    \},\
+    \{\
+      "header": \{\
+        "id": "EVT-015",\
+        "schema_id": \{ "namespace": "omh", "name": "single-medication-dose-taken", "version": "1.0" \},\
+        "creation_date_time": "2025-01-13T08:20:45Z",\
+        "acquisition_provenance": \{ "source_name": "Hailie Sensor", "modality": "sensed" \}\
+      \},\
+      "body": \{\
+        "medication_id": "MED-001",\
+        "effective_time_frame": \{ "date_time": "2025-01-13T08:20:45Z" \},\
+        "scheduled_time": "08:00",\
+        "adherium:inhaler_technique_telemetry": \{\
+          "shake_duration": \{ "value": 3100, "unit": "ms" \},\
+          "inspiratory_time": \{ "value": 2900, "unit": "ms" \},\
+          "peak_inspiratory_flow_rate": \{ "value": 65.3, "unit": "L/min" \},\
+          "device_orientation": \{ "value": 11, "unit": "deg" \},\
+          "estimated_delivered_volume": \{ "value": 1.9, "unit": "mL" \},\
+          "technique_score": 86\
+        \}\
+      \}\
+    \},\
+    \{\
+      "header": \{\
+        "id": "EVT-016",\
+        "schema_id": \{ "namespace": "omh", "name": "single-medication-dose-taken", "version": "1.0" \},\
+        "creation_date_time": "2025-01-13T20:55:12Z",\
+        "acquisition_provenance": \{ "source_name": "Hailie Sensor", "modality": "sensed" \}\
+      \},\
+      "body": \{\
+        "medication_id": "MED-001",\
+        "effective_time_frame": \{ "date_time": "2025-01-13T20:55:12Z" \},\
+        "scheduled_time": "20:00",\
+        "adherium:inhaler_technique_telemetry": \{\
+          "shake_duration": \{ "value": 2200, "unit": "ms" \},\
+          "inspiratory_time": \{ "value": 2000, "unit": "ms" \},\
+          "peak_inspiratory_flow_rate": \{ "value": 49.6, "unit": "L/min" \},\
+          "device_orientation": \{ "value": 30, "unit": "deg" \},\
+          "estimated_delivered_volume": \{ "value": 1.2, "unit": "mL" \},\
+          "technique_score": 52\
+        \}\
+      \}\
+    \},\
+    \{\
+      "header": \{\
+        "id": "EVT-017",\
+        "schema_id": \{ "namespace": "omh", "name": "single-medication-dose-taken", "version": "1.0" \},\
+        "creation_date_time": "2025-01-13T22:10:00Z",\
+        "acquisition_provenance": \{ "source_name": "Hailie Sensor", "modality": "sensed" \}\
+      \},\
+      "body": \{\
+        "medication_id": "MED-002",\
+        "effective_time_frame": \{ "date_time": "2025-01-13T22:10:00Z" \},\
+        "scheduled_time": null,\
+        "adherium:inhaler_technique_telemetry": \{\
+          "shake_duration": \{ "value": 1500, "unit": "ms" \},\
+          "inspiratory_time": \{ "value": 1700, "unit": "ms" \},\
+          "peak_inspiratory_flow_rate": \{ "value": 45.2, "unit": "L/min" \},\
+          "device_orientation": \{ "value": 38, "unit": "deg" \},\
+          "estimated_delivered_volume": \{ "value": 0.9, "unit": "mL" \},\
+          "technique_score": 40\
+        \}\
+      \}\
+    \},\
+    \{\
+      "header": \{\
+        "id": "EVT-018",\
+        "schema_id": \{ "namespace": "omh", "name": "single-medication-dose-taken", "version": "1.0" \},\
+        "creation_date_time": "2025-01-14T08:07:28Z",\
+        "acquisition_provenance": \{ "source_name": "Hailie Sensor", "modality": "sensed" \}\
+      \},\
+      "body": \{\
+        "medication_id": "MED-001",\
+        "effective_time_frame": \{ "date_time": "2025-01-14T08:07:28Z" \},\
+        "scheduled_time": "08:00",\
+        "adherium:inhaler_technique_telemetry": \{\
+          "shake_duration": \{ "value": 3500, "unit": "ms" \},\
+          "inspiratory_time": \{ "value": 3100, "unit": "ms" \},\
+          "peak_inspiratory_flow_rate": \{ "value": 69.2, "unit": "L/min" \},\
+          "device_orientation": \{ "value": 6, "unit": "deg" \},\
+          "estimated_delivered_volume": \{ "value": 2.1, "unit": "mL" \},\
+          "technique_score": 92\
+        \}\
+      \}\
+    \},\
+    \{\
+      "header": \{\
+        "id": "EVT-019",\
+        "schema_id": \{ "namespace": "omh", "name": "single-medication-dose-taken", "version": "1.0" \},\
+        "creation_date_time": "2025-01-14T20:20:33Z",\
+        "acquisition_provenance": \{ "source_name": "Hailie Sensor", "modality": "sensed" \}\
+      \},\
+      "body": \{\
+        "medication_id": "MED-001",\
+        "effective_time_frame": \{ "date_time": "2025-01-14T20:20:33Z" \},\
+        "scheduled_time": "20:00",\
+        "adherium:inhaler_technique_telemetry": \{\
+          "shake_duration": \{ "value": 2900, "unit": "ms" \},\
+          "inspiratory_time": \{ "value": 2600, "unit": "ms" \},\
+          "peak_inspiratory_flow_rate": \{ "value": 60.1, "unit": "L/min" \},\
+          "device_orientation": \{ "value": 16, "unit": "deg" \},\
+          "estimated_delivered_volume": \{ "value": 1.7, "unit": "mL" \},\
+          "technique_score": 76\
+        \}\
+      \}\
+    \},\
+    \{\
+      "header": \{\
+        "id": "EVT-020",\
+        "schema_id": \{ "namespace": "omh", "name": "single-medication-dose-taken", "version": "1.0" \},\
+        "creation_date_time": "2025-01-15T08:35:50Z",\
+        "acquisition_provenance": \{ "source_name": "Hailie Sensor", "modality": "sensed" \}\
+      \},\
+      "body": \{\
+        "medication_id": "MED-001",\
+        "effective_time_frame": \{ "date_time": "2025-01-15T08:35:50Z" \},\
+        "scheduled_time": "08:00",\
+        "adherium:inhaler_technique_telemetry": \{\
+          "shake_duration": \{ "value": 2500, "unit": "ms" \},\
+          "inspiratory_time": \{ "value": 2300, "unit": "ms" \},\
+          "peak_inspiratory_flow_rate": \{ "value": 54.9, "unit": "L/min" \},\
+          "device_orientation": \{ "value": 25, "unit": "deg" \},\
+          "estimated_delivered_volume": \{ "value": 1.4, "unit": "mL" \},\
+          "technique_score": 62\
+        \}\
+      \}\
+    \},\
+    \{\
+      "header": \{\
+        "id": "EVT-021",\
+        "schema_id": \{ "namespace": "omh", "name": "single-medication-dose-taken", "version": "1.0" \},\
+        "creation_date_time": "2025-01-15T20:08:14Z",\
+        "acquisition_provenance": \{ "source_name": "Hailie Sensor", "modality": "sensed" \}\
+      \},\
+      "body": \{\
+        "medication_id": "MED-001",\
+        "effective_time_frame": \{ "date_time": "2025-01-15T20:08:14Z" \},\
+        "scheduled_time": "20:00",\
+        "adherium:inhaler_technique_telemetry": \{\
+          "shake_duration": \{ "value": 3200, "unit": "ms" \},\
+          "inspiratory_time": \{ "value": 2800, "unit": "ms" \},\
+          "peak_inspiratory_flow_rate": \{ "value": 63.7, "unit": "L/min" \},\
+          "device_orientation": \{ "value": 13, "unit": "deg" \},\
+          "estimated_delivered_volume": \{ "value": 1.8, "unit": "mL" \},\
+          "technique_score": 83\
+        \}\
+      \}\
+    \},\
+    \{\
+      "header": \{\
+        "id": "EVT-022",\
+        "schema_id": \{ "namespace": "omh", "name": "single-medication-dose-taken", "version": "1.0" \},\
+        "creation_date_time": "2025-01-16T08:11:40Z",\
+        "acquisition_provenance": \{ "source_name": "Hailie Sensor", "modality": "sensed" \}\
+      \},\
+      "body": \{\
+        "medication_id": "MED-001",\
+        "effective_time_frame": \{ "date_time": "2025-01-16T08:11:40Z" \},\
+        "scheduled_time": "08:00",\
+        "adherium:inhaler_technique_telemetry": \{\
+          "shake_duration": \{ "value": 3400, "unit": "ms" \},\
+          "inspiratory_time": \{ "value": 3000, "unit": "ms" \},\
+          "peak_inspiratory_flow_rate": \{ "value": 67.5, "unit": "L/min" \},\
+          "device_orientation": \{ "value": 9, "unit": "deg" \},\
+          "estimated_delivered_volume": \{ "value": 2.0, "unit": "mL" \},\
+          "technique_score": 89\
+        \}\
+      \}\
+    \},\
+    \{\
+      "header": \{\
+        "id": "EVT-023",\
+        "schema_id": \{ "namespace": "omh", "name": "single-medication-dose-taken", "version": "1.0" \},\
+        "creation_date_time": "2025-01-16T20:40:55Z",\
+        "acquisition_provenance": \{ "source_name": "Hailie Sensor", "modality": "sensed" \}\
+      \},\
+      "body": \{\
+        "medication_id": "MED-001",\
+        "effective_time_frame": \{ "date_time": "2025-01-16T20:40:55Z" \},\
+        "scheduled_time": "20:00",\
+        "adherium:inhaler_technique_telemetry": \{\
+          "shake_duration": \{ "value": 2000, "unit": "ms" \},\
+          "inspiratory_time": \{ "value": 1900, "unit": "ms" \},\
+          "peak_inspiratory_flow_rate": \{ "value": 47.8, "unit": "L/min" \},\
+          "device_orientation": \{ "value": 33, "unit": "deg" \},\
+          "estimated_delivered_volume": \{ "value": 1.1, "unit": "mL" \},\
+          "technique_score": 48\
+        \}\
+      \}\
+    \},\
+    \{\
+      "header": \{\
+        "id": "EVT-024",\
+        "schema_id": \{ "namespace": "omh", "name": "single-medication-dose-taken", "version": "1.0" \},\
+        "creation_date_time": "2025-01-16T21:30:00Z",\
+        "acquisition_provenance": \{ "source_name": "Hailie Sensor", "modality": "sensed" \}\
+      \},\
+      "body": \{\
+        "medication_id": "MED-002",\
+        "effective_time_frame": \{ "date_time": "2025-01-16T21:30:00Z" \},\
+        "scheduled_time": null,\
+        "adherium:inhaler_technique_telemetry": \{\
+          "shake_duration": \{ "value": 1400, "unit": "ms" \},\
+          "inspiratory_time": \{ "value": 1600, "unit": "ms" \},\
+          "peak_inspiratory_flow_rate": \{ "value": 43.5, "unit": "L/min" \},\
+          "device_orientation": \{ "value": 42, "unit": "deg" \},\
+          "estimated_delivered_volume": \{ "value": 0.9, "unit": "mL" \},\
+          "technique_score": 36\
+        \}\
+      \}\
+    \},\
+    \{\
+      "header": \{\
+        "id": "EVT-025",\
+        "schema_id": \{ "namespace": "omh", "name": "single-medication-dose-taken", "version": "1.0" \},\
+        "creation_date_time": "2025-01-17T08:02:18Z",\
+        "acquisition_provenance": \{ "source_name": "Hailie Sensor", "modality": "sensed" \}\
+      \},\
+      "body": \{\
+        "medication_id": "MED-001",\
+        "effective_time_frame": \{ "date_time": "2025-01-17T08:02:18Z" \},\
+        "scheduled_time": "08:00",\
+        "adherium:inhaler_technique_telemetry": \{\
+          "shake_duration": \{ "value": 3600, "unit": "ms" \},\
+          "inspiratory_time": \{ "value": 3300, "unit": "ms" \},\
+          "peak_inspiratory_flow_rate": \{ "value": 71.2, "unit": "L/min" \},\
+          "device_orientation": \{ "value": 4, "unit": "deg" \},\
+          "estimated_delivered_volume": \{ "value": 2.3, "unit": "mL" \},\
+          "technique_score": 95\
+        \}\
+      \}\
+    \},\
+    \{\
+      "header": \{\
+        "id": "EVT-026",\
+        "schema_id": \{ "namespace": "omh", "name": "single-medication-dose-taken", "version": "1.0" \},\
+        "creation_date_time": "2025-01-17T20:12:40Z",\
+        "acquisition_provenance": \{ "source_name": "Hailie Sensor", "modality": "sensed" \}\
+      \},\
+      "body": \{\
+        "medication_id": "MED-001",\
+        "effective_time_frame": \{ "date_time": "2025-01-17T20:12:40Z" \},\
+        "scheduled_time": "20:00",\
+        "adherium:inhaler_technique_telemetry": \{\
+          "shake_duration": \{ "value": 3100, "unit": "ms" \},\
+          "inspiratory_time": \{ "value": 2800, "unit": "ms" \},\
+          "peak_inspiratory_flow_rate": \{ "value": 64.8, "unit": "L/min" \},\
+          "device_orientation": \{ "value": 12, "unit": "deg" \},\
+          "estimated_delivered_volume": \{ "value": 1.8, "unit": "mL" \},\
+          "technique_score": 84\
+        \}\
+      \}\
+    \},\
+    \{\
+      "header": \{\
+        "id": "EVT-027",\
+        "schema_id": \{ "namespace": "omh", "name": "single-medication-dose-taken", "version": "1.0" \},\
+        "creation_date_time": "2025-01-18T08:25:33Z",\
+        "acquisition_provenance": \{ "source_name": "Hailie Sensor", "modality": "sensed" \}\
+      \},\
+      "body": \{\
+        "medication_id": "MED-001",\
+        "effective_time_frame": \{ "date_time": "2025-01-18T08:25:33Z" \},\
+        "scheduled_time": "08:00",\
+        "adherium:inhaler_technique_telemetry": \{\
+          "shake_duration": \{ "value": 2700, "unit": "ms" \},\
+          "inspiratory_time": \{ "value": 2500, "unit": "ms" \},\
+          "peak_inspiratory_flow_rate": \{ "value": 58.3, "unit": "L/min" \},\
+          "device_orientation": \{ "value": 19, "unit": "deg" \},\
+          "estimated_delivered_volume": \{ "value": 1.6, "unit": "mL" \},\
+          "technique_score": 71\
+        \}\
+      \}\
+    \},\
+    \{\
+      "header": \{\
+        "id": "EVT-028",\
+        "schema_id": \{ "namespace": "omh", "name": "single-medication-dose-taken", "version": "1.0" \},\
+        "creation_date_time": "2025-01-19T08:09:12Z",\
+        "acquisition_provenance": \{ "source_name": "Hailie Sensor", "modality": "sensed" \}\
+      \},\
+      "body": \{\
+        "medication_id": "MED-001",\
+        "effective_time_frame": \{ "date_time": "2025-01-19T08:09:12Z" \},\
+        "scheduled_time": "08:00",\
+        "adherium:inhaler_technique_telemetry": \{\
+          "shake_duration": \{ "value": 3300, "unit": "ms" \},\
+          "inspiratory_time": \{ "value": 3000, "unit": "ms" \},\
+          "peak_inspiratory_flow_rate": \{ "value": 66.9, "unit": "L/min" \},\
+          "device_orientation": \{ "value": 8, "unit": "deg" \},\
+          "estimated_delivered_volume": \{ "value": 2.0, "unit": "mL" \},\
+          "technique_score": 89\
+        \}\
+      \}\
+    \},\
+    \{\
+      "header": \{\
+        "id": "EVT-029",\
+        "schema_id": \{ "namespace": "omh", "name": "single-medication-dose-taken", "version": "1.0" \},\
+        "creation_date_time": "2025-01-19T20:50:44Z",\
+        "acquisition_provenance": \{ "source_name": "Hailie Sensor", "modality": "sensed" \}\
+      \},\
+      "body": \{\
+        "medication_id": "MED-001",\
+        "effective_time_frame": \{ "date_time": "2025-01-19T20:50:44Z" \},\
+        "scheduled_time": "20:00",\
+        "adherium:inhaler_technique_telemetry": \{\
+          "shake_duration": \{ "value": 2300, "unit": "ms" \},\
+          "inspiratory_time": \{ "value": 2100, "unit": "ms" \},\
+          "peak_inspiratory_flow_rate": \{ "value": 51.2, "unit": "L/min" \},\
+          "device_orientation": \{ "value": 27, "unit": "deg" \},\
+          "estimated_delivered_volume": \{ "value": 1.3, "unit": "mL" \},\
+          "technique_score": 55\
+        \}\
+      \}\
+    \},\
+    \{\
+      "header": \{\
+        "id": "EVT-030",\
+        "schema_id": \{ "namespace": "omh", "name": "single-medication-dose-taken", "version": "1.0" \},\
+        "creation_date_time": "2025-01-20T08:06:50Z",\
+        "acquisition_provenance": \{ "source_name": "Hailie Sensor", "modality": "sensed" \}\
+      \},\
+      "body": \{\
+        "medication_id": "MED-001",\
+        "effective_time_frame": \{ "date_time": "2025-01-20T08:06:50Z" \},\
+        "scheduled_time": "08:00",\
+        "adherium:inhaler_technique_telemetry": \{\
+          "shake_duration": \{ "value": 3500, "unit": "ms" \},\
+          "inspiratory_time": \{ "value": 3200, "unit": "ms" \},\
+          "peak_inspiratory_flow_rate": \{ "value": 70.1, "unit": "L/min" \},\
+          "device_orientation": \{ "value": 5, "unit": "deg" \},\
+          "estimated_delivered_volume": \{ "value": 2.2, "unit": "mL" \},\
+          "technique_score": 93\
+        \}\
+      \}\
+    \},\
+    \{\
+      "header": \{\
+        "id": "EVT-031",\
+        "schema_id": \{ "namespace": "omh", "name": "single-medication-dose-taken", "version": "1.0" \},\
+        "creation_date_time": "2025-01-20T20:18:25Z",\
+        "acquisition_provenance": \{ "source_name": "Hailie Sensor", "modality": "sensed" \}\
+      \},\
+      "body": \{\
+        "medication_id": "MED-001",\
+        "effective_time_frame": \{ "date_time": "2025-01-20T20:18:25Z" \},\
+        "scheduled_time": "20:00",\
+        "adherium:inhaler_technique_telemetry": \{\
+          "shake_duration": \{ "value": 3000, "unit": "ms" \},\
+          "inspiratory_time": \{ "value": 2700, "unit": "ms" \},\
+          "peak_inspiratory_flow_rate": \{ "value": 62.4, "unit": "L/min" \},\
+          "device_orientation": \{ "value": 14, "unit": "deg" \},\
+          "estimated_delivered_volume": \{ "value": 1.8, "unit": "mL" \},\
+          "technique_score": 80\
+        \}\
+      \}\
+    \},\
+    \{\
+      "header": \{\
+        "id": "EVT-032",\
+        "schema_id": \{ "namespace": "omh", "name": "single-medication-dose-taken", "version": "1.0" \},\
+        "creation_date_time": "2025-01-20T15:22:00Z",\
+        "acquisition_provenance": \{ "source_name": "Hailie Sensor", "modality": "sensed" \}\
+      \},\
+      "body": \{\
+        "medication_id": "MED-002",\
+        "effective_time_frame": \{ "date_time": "2025-01-20T15:22:00Z" \},\
+        "scheduled_time": null,\
+        "adherium:inhaler_technique_telemetry": \{\
+          "shake_duration": \{ "value": 1600, "unit": "ms" \},\
+          "inspiratory_time": \{ "value": 1800, "unit": "ms" \},\
+          "peak_inspiratory_flow_rate": \{ "value": 46.7, "unit": "L/min" \},\
+          "device_orientation": \{ "value": 36, "unit": "deg" \},\
+          "estimated_delivered_volume": \{ "value": 1.0, "unit": "mL" \},\
+          "technique_score": 42\
+        \}\
+      \}\
+    \},\
+    \{\
+      "header": \{\
+        "id": "EVT-033",\
+        "schema_id": \{ "namespace": "omh", "name": "single-medication-dose-taken", "version": "1.0" \},\
+        "creation_date_time": "2025-01-21T08:14:38Z",\
+        "acquisition_provenance": \{ "source_name": "Hailie Sensor", "modality": "sensed" \}\
+      \},\
+      "body": \{\
+        "medication_id": "MED-001",\
+        "effective_time_frame": \{ "date_time": "2025-01-21T08:14:38Z" \},\
+        "scheduled_time": "08:00",\
+        "adherium:inhaler_technique_telemetry": \{\
+          "shake_duration": \{ "value": 3200, "unit": "ms" \},\
+          "inspiratory_time": \{ "value": 2900, "unit": "ms" \},\
+          "peak_inspiratory_flow_rate": \{ "value": 65.6, "unit": "L/min" \},\
+          "device_orientation": \{ "value": 10, "unit": "deg" \},\
+          "estimated_delivered_volume": \{ "value": 1.9, "unit": "mL" \},\
+          "technique_score": 87\
+        \}\
+      \}\
+    \},\
+    \{\
+      "header": \{\
+        "id": "EVT-034",\
+        "schema_id": \{ "namespace": "omh", "name": "single-medication-dose-taken", "version": "1.0" \},\
+        "creation_date_time": "2025-01-21T20:35:10Z",\
+        "acquisition_provenance": \{ "source_name": "Hailie Sensor", "modality": "sensed" \}\
+      \},\
+      "body": \{\
+        "medication_id": "MED-001",\
+        "effective_time_frame": \{ "date_time": "2025-01-21T20:35:10Z" \},\
+        "scheduled_time": "20:00",\
+        "adherium:inhaler_technique_telemetry": \{\
+          "shake_duration": \{ "value": 2600, "unit": "ms" \},\
+          "inspiratory_time": \{ "value": 2400, "unit": "ms" \},\
+          "peak_inspiratory_flow_rate": \{ "value": 57.3, "unit": "L/min" \},\
+          "device_orientation": \{ "value": 21, "unit": "deg" \},\
+          "estimated_delivered_volume": \{ "value": 1.5, "unit": "mL" \},\
+          "technique_score": 69\
+        \}\
+      \}\
+    \},\
+    \{\
+      "header": \{\
+        "id": "EVT-035",\
+        "schema_id": \{ "namespace": "omh", "name": "single-medication-dose-taken", "version": "1.0" \},\
+        "creation_date_time": "2025-01-22T08:08:22Z",\
+        "acquisition_provenance": \{ "source_name": "Hailie Sensor", "modality": "sensed" \}\
+      \},\
+      "body": \{\
+        "medication_id": "MED-001",\
+        "effective_time_frame": \{ "date_time": "2025-01-22T08:08:22Z" \},\
+        "scheduled_time": "08:00",\
+        "adherium:inhaler_technique_telemetry": \{\
+          "shake_duration": \{ "value": 3400, "unit": "ms" \},\
+          "inspiratory_time": \{ "value": 3100, "unit": "ms" \},\
+          "peak_inspiratory_flow_rate": \{ "value": 68.4, "unit": "L/min" \},\
+          "device_orientation": \{ "value": 7, "unit": "deg" \},\
+          "estimated_delivered_volume": \{ "value": 2.1, "unit": "mL" \},\
+          "technique_score": 91\
+        \}\
+      \}\
+    \},\
+    \{\
+      "header": \{\
+        "id": "EVT-036",\
+        "schema_id": \{ "namespace": "omh", "name": "single-medication-dose-taken", "version": "1.0" \},\
+        "creation_date_time": "2025-01-23T08:30:15Z",\
+        "acquisition_provenance": \{ "source_name": "Hailie Sensor", "modality": "sensed" \}\
+      \},\
+      "body": \{\
+        "medication_id": "MED-001",\
+        "effective_time_frame": \{ "date_time": "2025-01-23T08:30:15Z" \},\
+        "scheduled_time": "08:00",\
+        "adherium:inhaler_technique_telemetry": \{\
+          "shake_duration": \{ "value": 2800, "unit": "ms" \},\
+          "inspiratory_time": \{ "value": 2500, "unit": "ms" \},\
+          "peak_inspiratory_flow_rate": \{ "value": 59.1, "unit": "L/min" \},\
+          "device_orientation": \{ "value": 17, "unit": "deg" \},\
+          "estimated_delivered_volume": \{ "value": 1.6, "unit": "mL" \},\
+          "technique_score": 74\
+        \}\
+      \}\
+    \},\
+    \{\
+      "header": \{\
+        "id": "EVT-037",\
+        "schema_id": \{ "namespace": "omh", "name": "single-medication-dose-taken", "version": "1.0" \},\
+        "creation_date_time": "2025-01-23T20:05:48Z",\
+        "acquisition_provenance": \{ "source_name": "Hailie Sensor", "modality": "sensed" \}\
+      \},\
+      "body": \{\
+        "medication_id": "MED-001",\
+        "effective_time_frame": \{ "date_time": "2025-01-23T20:05:48Z" \},\
+        "scheduled_time": "20:00",\
+        "adherium:inhaler_technique_telemetry": \{\
+          "shake_duration": \{ "value": 3100, "unit": "ms" \},\
+          "inspiratory_time": \{ "value": 2800, "unit": "ms" \},\
+          "peak_inspiratory_flow_rate": \{ "value": 63.9, "unit": "L/min" \},\
+          "device_orientation": \{ "value": 11, "unit": "deg" \},\
+          "estimated_delivered_volume": \{ "value": 1.8, "unit": "mL" \},\
+          "technique_score": 83\
+        \}\
+      \}\
+    \},\
+    \{\
+      "header": \{\
+        "id": "EVT-038",\
+        "schema_id": \{ "namespace": "omh", "name": "single-medication-dose-taken", "version": "1.0" \},\
+        "creation_date_time": "2025-01-24T08:18:30Z",\
+        "acquisition_provenance": \{ "source_name": "Hailie Sensor", "modality": "sensed" \}\
+      \},\
+      "body": \{\
+        "medication_id": "MED-001",\
+        "effective_time_frame": \{ "date_time": "2025-01-24T08:18:30Z" \},\
+        "scheduled_time": "08:00",\
+        "adherium:inhaler_technique_telemetry": \{\
+          "shake_duration": \{ "value": 3500, "unit": "ms" \},\
+          "inspiratory_time": \{ "value": 3200, "unit": "ms" \},\
+          "peak_inspiratory_flow_rate": \{ "value": 69.7, "unit": "L/min" \},\
+          "device_orientation": \{ "value": 6, "unit": "deg" \},\
+          "estimated_delivered_volume": \{ "value": 2.2, "unit": "mL" \},\
+          "technique_score": 93\
+        \}\
+      \}\
+    \},\
+    \{\
+      "header": \{\
+        "id": "EVT-039",\
+        "schema_id": \{ "namespace": "omh", "name": "single-medication-dose-taken", "version": "1.0" \},\
+        "creation_date_time": "2025-01-24T20:42:15Z",\
+        "acquisition_provenance": \{ "source_name": "Hailie Sensor", "modality": "sensed" \}\
+      \},\
+      "body": \{\
+        "medication_id": "MED-001",\
+        "effective_time_frame": \{ "date_time": "2025-01-24T20:42:15Z" \},\
+        "scheduled_time": "20:00",\
+        "adherium:inhaler_technique_telemetry": \{\
+          "shake_duration": \{ "value": 2100, "unit": "ms" \},\
+          "inspiratory_time": \{ "value": 2000, "unit": "ms" \},\
+          "peak_inspiratory_flow_rate": \{ "value": 50.3, "unit": "L/min" \},\
+          "device_orientation": \{ "value": 29, "unit": "deg" \},\
+          "estimated_delivered_volume": \{ "value": 1.2, "unit": "mL" \},\
+          "technique_score": 53\
+        \}\
+      \}\
+    \},\
+    \{\
+      "header": \{\
+        "id": "EVT-040",\
+        "schema_id": \{ "namespace": "omh", "name": "single-medication-dose-taken", "version": "1.0" \},\
+        "creation_date_time": "2025-01-24T23:15:00Z",\
+        "acquisition_provenance": \{ "source_name": "Hailie Sensor", "modality": "sensed" \}\
+      \},\
+      "body": \{\
+        "medication_id": "MED-002",\
+        "effective_time_frame": \{ "date_time": "2025-01-24T23:15:00Z" \},\
+        "scheduled_time": null,\
+        "adherium:inhaler_technique_telemetry": \{\
+          "shake_duration": \{ "value": 1300, "unit": "ms" \},\
+          "inspiratory_time": \{ "value": 1500, "unit": "ms" \},\
+          "peak_inspiratory_flow_rate": \{ "value": 41.8, "unit": "L/min" \},\
+          "device_orientation": \{ "value": 44, "unit": "deg" \},\
+          "estimated_delivered_volume": \{ "value": 0.8, "unit": "mL" \},\
+          "technique_score": 30\
+        \}\
+      \}\
+    \}\
+  ],\
+  "missed_dose_events": [\
+    \{\
+      "header": \{\
+        "id": "MISS-001",\
+        "schema_id": \{ "namespace": "omh", "name": "reason-single-medication-dose-not-taken", "version": "1.0" \},\
+        "creation_date_time": "2025-01-09T00:00:00Z"\
+      \},\
+      "body": \{\
+        "medication_id": "MED-001",\
+        "effective_time_frame": \{ "date_time": "2025-01-08T20:00:00Z" \},\
+        "scheduled_time": "20:00"\
+      \}\
+    \},\
+    \{\
+      "header": \{\
+        "id": "MISS-002",\
+        "schema_id": \{ "namespace": "omh", "name": "reason-single-medication-dose-not-taken", "version": "1.0" \},\
+        "creation_date_time": "2025-01-12T00:00:00Z"\
+      \},\
+      "body": \{\
+        "medication_id": "MED-001",\
+        "effective_time_frame": \{ "date_time": "2025-01-11T20:00:00Z" \},\
+        "scheduled_time": "20:00"\
+      \}\
+    \},\
+    \{\
+      "header": \{\
+        "id": "MISS-003",\
+        "schema_id": \{ "namespace": "omh", "name": "reason-single-medication-dose-not-taken", "version": "1.0" \},\
+        "creation_date_time": "2025-01-19T00:00:00Z"\
+      \},\
+      "body": \{\
+        "medication_id": "MED-001",\
+        "effective_time_frame": \{ "date_time": "2025-01-18T20:00:00Z" \},\
+        "scheduled_time": "20:00"\
+      \}\
+    \},\
+    \{\
+      "header": \{\
+        "id": "MISS-004",\
+        "schema_id": \{ "namespace": "omh", "name": "reason-single-medication-dose-not-taken", "version": "1.0" \},\
+        "creation_date_time": "2025-01-23T00:00:00Z"\
+      \},\
+      "body": \{\
+        "medication_id": "MED-001",\
+        "effective_time_frame": \{ "date_time": "2025-01-22T20:00:00Z" \},\
+        "scheduled_time": "20:00"\
+      \}\
+    \}\
+  ],\
+  "technique_thresholds": \{\
+    "_note": "Reference data for clinical display. These thresholds define quality bands for each technique metric captured by Hailie sensors.",\
+    "shake_duration": \{\
+      "good": \{ "value": 3000, "unit": "ms" \},\
+      "acceptable": \{ "value": 2000, "unit": "ms" \},\
+      "description": "Duration of device shake before inhalation"\
+    \},\
+    "inspiratory_time": \{\
+      "good": \{ "value": 2800, "unit": "ms" \},\
+      "acceptable": \{ "value": 2000, "unit": "ms" \},\
+      "description": "Duration of inhalation"\
+    \},\
+    "peak_inspiratory_flow_rate": \{\
+      "good": \{ "value": 60, "unit": "L/min" \},\
+      "acceptable": \{ "value": 45, "unit": "L/min" \},\
+      "description": "Peak inspiratory flow rate"\
+    \},\
+    "device_orientation": \{\
+      "good": \{ "value": 15, "unit": "deg" \},\
+      "acceptable": \{ "value": 30, "unit": "deg" \},\
+      "description": "Device angle from vertical (lower is better)"\
+    \},\
+    "estimated_delivered_volume": \{\
+      "good": \{ "value": 1.8, "unit": "mL" \},\
+      "acceptable": \{ "value": 1.2, "unit": "mL" \},\
+      "description": "Estimated inhaled medication volume"\
+    \}\
+  \}\
+\}}

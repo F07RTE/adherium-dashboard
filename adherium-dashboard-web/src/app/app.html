@@ -1,0 +1,11 @@
+<main class="adh-page-content">
+  <app-patient-header />
+  <app-adherence-overview />
+  <app-event-list (eventSelected)="openDetail($event)" />
+  <app-event-detail-panel
+    [event]="selectedEvent()"
+    [visible]="detailVisible()"
+    (closed)="closeDetail()" />
+  <router-outlet />
+</main>
+
